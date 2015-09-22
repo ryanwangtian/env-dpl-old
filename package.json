@@ -1,0 +1,33 @@
+{
+  "name": "env-dpl",
+  "version": "1.0.0",
+  "description": "Envision Design Pattern Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryanwangtian/env-dpl"
+  },
+  "keywords": [
+    "envsion",
+    "dpl"
+  ],
+  "author": "ryan.wang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryanwangtian/env-dpl/issues"
+  },
+  "homepage": "http://ryanwangtian.github.io/env-dpl",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.4.1"
+  }
+}
