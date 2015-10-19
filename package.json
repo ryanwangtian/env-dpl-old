@@ -21,9 +21,12 @@
   },
   "homepage": "http://ryanwangtian.github.io/env-dpl",
   "devDependencies": {
+    "browser-sync": "^2.9.6",
+    "del": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-jshint": "^1.11.2",
+    "gulp-load-plugins": "^0.10.0",
     "gulp-minify-css": "^1.2.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
