@@ -27,11 +27,10 @@
     var templates = {
         menuItem: ['<li>',
             '<a>',
-            '<span class="' + classNames.menuItemIcon + ' ' + classNames.icon + '"></span>',
             '<span class="' + classNames.menuItemTitle + '"></span>',
+            '<span class="' + classNames.menuItemArrow + '"></span>',
             '</a>',
             '</li>'].join(""),
-        menuItemArrow: '<span class="' + classNames.menuItemArrow + '"></span>',
         subMenuCntr: '<ul></ul>'
     };
 
@@ -47,7 +46,6 @@
                 data: itemData,
                 id: itemData[keys.id],
                 name: itemData[keys.name],
-                icon: itemData[keys.icon],
                 children: [],
                 $element: $(templates.menuItem),
                 $childrenCntr: null,
@@ -59,18 +57,16 @@
         curMenuItem.$element.children("a").click(function() {
             if (curMenuItem.children.length > 0) {
                 if (curMenuItem.$element.hasClass(classNames.active)) {
-                    curMenuItem.$childrenCntr.slideUp(function() {
-                        curMenuItem.$element.removeClass(classNames.active);
-                    });
+                    curMenuItem.$element.removeClass(classNames.active);
+                    curMenuItem.$childrenCntr.slideUp();
                 } else {
                     curMenuItem.$childrenCntr.slideDown();
                     curMenuItem.$element.addClass(classNames.active);
                     var siblings = curMenuItem.parentMenuItem == null ? ins.menuItems : curMenuItem.parentMenuItem.children;
                     for (var i in siblings) {
                         if (siblings[i].$element.hasClass(classNames.active) && siblings[i] != curMenuItem) {
-                            siblings[i].$childrenCntr.slideUp(function() {
-                                siblings[i].$element.removeClass(classNames.active);
-                            });
+                            siblings[i].$element.removeClass(classNames.active);
+                            siblings[i].$childrenCntr.slideUp();
                             break;
                         }
                     }
@@ -79,9 +75,6 @@
             _triggerOnMenuItemClicked.call(ins, curMenuItem);
         }).find("." + classNames.menuItemTitle)
             .text(curMenuItem.name)
-            .attr("title", curMenuItem.name);
-        curMenuItem.$element.find("." + classNames.menuItemIcon)
-            .addClass(curMenuItem.icon || "")
             .attr("title", curMenuItem.name);
 
         if (parentMenuItem == null) {
@@ -101,9 +94,12 @@
             //curMenuItem.$element.addClass(classNames.active);
             curMenuItem.$childrenCntr = $(templates.subMenuCntr);
             curMenuItem.$element.append(curMenuItem.$childrenCntr);
-            curMenuItem.$element.children("a").append(templates.menuItemArrow);
             for (var i in itemData[keys.children]) {
                 arguments.callee.call(this, itemData[keys.children][i], curMenuItem);
+            }
+        } else {
+            if (parentMenuItem == null) {
+                curMenuItem.$element.find('.' + classNames.menuItemArrow).remove();
             }
         }
     }
