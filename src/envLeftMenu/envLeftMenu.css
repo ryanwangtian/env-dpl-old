@@ -5,25 +5,28 @@ ul.env-left-menu, ul.env-left-menu ul {
 }
 
 ul.env-left-menu {
+    box-sizing: border-box;
+    width: 240px;
     background: #e4e4e4;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
     margin:10px;
 }
 
 ul.env-left-menu li a {
-    position: relative;
-    background: #fff;
     display: block;
-    padding: 5px;
+    position: relative;
+    box-sizing: border-box;
+    border-top: 1px solid #ccc;
+    padding: 10px 20px 10px 10px;
+    background: #fff;
     font-size: 14px;
     color: #333;
-    border-top: 2px solid #ccc;
     cursor: pointer;
 }
 ul.env-left-menu li.active > a {
-    border-bottom: 2px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
-ul.env-left-menu li:first-child a {
+ul.env-left-menu li:first-child > a {
     border-top: 0;
 }
 
@@ -34,7 +37,8 @@ ul.env-left-menu li ul {
 ul.env-left-menu li li a {
     background: transparent;
     display: block;
-    margin: 0 5px
+    margin: 0 10px;
+    padding-left: 0;
 }
 
 ul.env-left-menu li a > span.eln-item-arrow {
@@ -42,10 +46,9 @@ ul.env-left-menu li a > span.eln-item-arrow {
     display: block;
     width: 12px;
     height: 12px;
-/*     background: red; */
     background-size: contain;
     top: 50%;
-    right: 5px;
+    right: 4px;
     margin-top: -6px;
     transition: all .5s;
     background-image: 
@@ -53,4 +56,9 @@ ul.env-left-menu li a > span.eln-item-arrow {
 }
 ul.env-left-menu li.active > a > span.eln-item-arrow {
     transform: rotate(-180deg);
+}
+
+ul.env-left-menu li li > a > span.eln-item-arrow {
+    right: 0;
+    transform: rotate(-90deg);
 }

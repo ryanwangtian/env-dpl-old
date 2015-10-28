@@ -1,157 +1,24 @@
-/**
- * Created by tian.wang on 2015/3/31.
- */
-var data = [{
-    id: "dashboard",
-    name: "DashBoard",
-    icon: "env-icon-arrow-monitor",
-    url: "http://www.baidu.com",
-    children: []
-}, {
-    id: "scoreboard",
-    name: "Scoreboard",
-    children: [{
-        id: "gridView",
-        name: "Grid View",
-        url: "http://www.soso.com",
-        children: []
-    }, {
-        id: "wfScoreboard",
-        name: "Wind Farm Scoreboard",
-        url: "http://www.so.com",
-        children: []
-    }, {
-        id: "wtgScoreboard",
-        name: "Turbine Scoreboard",
-        url: "http://www.bing.com",
-        children: []
-    }]
-}, {
-    id: "kpiChart",
-    name: "KPI Chart",
-    children: [{
-        id: "downtimeLoss",
-        name: "Downtime Loss",
-        children: []
-    }, {
-        id: "faultLoss",
-        name: "Fault Loss",
-        children: [{
-            id: "equipmentLoss",
-            name: "Equipment Loss",
-            children: []
-        }, {
-            id: "faultCodeLoss",
-            name: "Fault Code Loss",
-            children: []
-        }, {
-            id: "faultFrequency",
-            name: "Fault Frequency",
-            children: []
-        }, {
-            id: "repairmentLoss",
-            name: "Repairment Loss",
-            children: []
-        }]
-    }, {
-        id: "operationLoss",
-        name: "Operation Loss",
-        children: [{
-            id: "gridCurtailment",
-            name: "Grid Curtailment",
-            children: []
-        }, {
-            id: "powerCurveLoss",
-            name: "Power Curve Loss",
-            children: []
-        }]
-    }, {
-        id: "costOfLabor",
-        name: "Cost of Labor",
-        children: [{
-            id: "laborHours",
-            name: "Labor Hours",
-            children: []
-        }, {
-            id: "laborUtilization",
-            name: "Labor Utilization",
-            children: []
-        }]
-    }]
-}, {
-    id: "inquiryTable",
-    name: "I am very very very very very very very very very very very very long",
-    icon: "env-icon-arrow-line-chart",
-    children: [{
-        id: "productionLoss",
-        name: "Production and Loss",
-        children: []
-    }, {
-        id: "downtimeLoss",
-        name: "Downtime Loss",
-        children: [{
-            id: "downtimeRecord",
-            name: "Downtime Record",
-            children: []
-        }, {
-            id: "equipmentLoss",
-            name: "Equipment Loss",
-            children: []
-        }, {
-            id: "faultCodeLoss",
-            name: "Fault Code Loss",
-            children: []
-        }, {
-            id: "faultFrequency",
-            name: "Fault Frequency",
-            children: []
-        }, {
-            id: "repairmentLoss",
-            name: "Repairment Loss",
-            children: []
-        }, {
-            id: "faultRepairment",
-            name: "Fault Repairment",
-            children: []
-        }]
-    }, {
-        id: "operationLoss",
-        name: "Operation Loss",
-        children: [{
-            id: "wfCurtailmentRecord",
-            name: "WindFarm Curtailemnt Record",
-            children: []
-        }, {
-            id: "turbineCurtailmentLoss",
-            name: "Turbine Curtailment Loss",
-            children: []
-        }, {
-            id: "powercurveLoss",
-            name: "Powercurve Loss",
-            children: []
-        }]
-    }, {
-        id: "labor Utilization",
-        name: "Labor Utilization",
-        children: []
-    }, {
-        id: "enCost",
-        name: "EN Cost",
-        children: []
-    }]
-}, {
-    id: "analysisTools",
-    name: "Analysis Tools",
-    children: [{
-        id: "performanceRanking",
-        name: "Performance Ranking",
-        children: []
-    }, {
-        id: "kpiAnalysis",
-        name: "KPI Analysis",
-        children: []
-    }]
-}];
+var data = [{id: 'l1', name: '一级菜单A', children: [
+        {id: 'l11', name: '二级菜单A1'},
+        {id: 'l12', name: '二级菜单A2'},
+        {id: 'l13', name: '二级菜单A3'},
+        {id: 'l14', name: '二级菜单A4'},
+        {id: 'l15', name: '二级菜单A5'}
+    ]},
+    {id: 'l2', name: '非常长非常长非常长非常长非常长非常长非常长非常长非常长的一级菜单B', children: [
+        {id: 'l21', name: '二级菜单B1'},
+        {id: 'l22', name: '二级菜单B2'},
+        {id: 'l23', name: '非常长非常长非常长非常长非常长非常长非常长非常长非常长的二级菜单B3'},
+        {id: 'l24', name: '二级菜单B4'},
+        {id: 'l25', name: '二级菜单B5'}
+    ]},
+    {id: 'l3', name: '一级菜单C'},
+    {id: 'l4', name: '一级菜单D'},
+    {id: 'l5', name: '一级菜单E'},
+    {id: 'l6', name: '一级菜单F'},
+    {id: 'l7', name: '一级菜单G'},
+    {id: 'l8', name: '一级菜单H'}];
+
 $(function() {
     $("#test").envLeftMenu({
         data: data,
